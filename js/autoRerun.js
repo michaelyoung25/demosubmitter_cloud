@@ -193,6 +193,27 @@ function init(){
         }
     });
 
+    $('#hardware_form input').on('change', function() {
+        if($('input[name=hardware_radio]:checked', '#hardware_form').val()=="AWS"){
+            $("#hardware-message").animate({height: '0px',opacity:'0',margin:'0px',padding:'0px',borderWidth:'0px'}, "slow");
+            $("#aws_vm").animate({height: '168px',opacity:'1',margin:'0px 6px 6px 6px',padding:'5px',borderWidth:'0px'}, "slow");
+            $("#gcp_vm").animate({height: '0px', opacity: '0', margin: '0px', padding: '0px', borderWidth: '0px'}, "slow");
+            $("#azure_vm").animate({height: '0px', opacity: '0', margin: '0px', padding: '0px', borderWidth: '0px'}, "slow");
+        }
+        if($('input[name=hardware_radio]:checked', '#hardware_form').val()=="GCP"){
+            $("#hardware-message").animate({height: '0px',opacity:'0',margin:'0px',padding:'0px',borderWidth:'0px'}, "slow");
+            $("#aws_vm").animate({height: '0px', opacity: '0', margin: '0px', padding: '0px', borderWidth: '0px'}, "slow");
+            $("#gcp_vm").animate({height: '168px',opacity:'1',margin:'0px 6px 6px 6px',padding:'5px',borderWidth:'0px'}, "slow");
+            $("#azure_vm").animate({height: '0px', opacity: '0', margin: '0px', padding: '0px', borderWidth: '0px'}, "slow");
+        }
+        if($('input[name=hardware_radio]:checked', '#hardware_form').val()=="AZURE"){
+            $("#hardware-message").animate({height: '0px',opacity:'0',margin:'0px',padding:'0px',borderWidth:'0px'}, "slow");
+            $("#aws_vm").animate({height: '0px', opacity: '0', margin: '0px', padding: '0px', borderWidth: '0px'}, "slow");
+            $("#gcp_vm").animate({height: '0px', opacity: '0', margin: '0px', padding: '0px', borderWidth: '0px'}, "slow");
+            $("#azure_vm").animate({height: '168px',opacity:'1',margin:'0px 6px 6px 6px',padding:'5px',borderWidth:'0px'}, "slow");
+        }
+    });
+
     $('[name=exsys_tab]').on('click',function(){
         if(!$(this).hasClass("down")){
             $('[name=exsys_tab]').removeClass('down');

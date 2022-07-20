@@ -67,10 +67,10 @@
                         <a href="#overview" style="font-family: Helvetica;">Overview</a>
                     </li>
                      <li class="page-scroll">
-                        <a href="#interactiveDemo" style="font-family: Helvetica;">Cosine in Action</a>
+                        <a href="index.html" style="font-family: Helvetica;">Cosine in Action</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="evaluateDesign.html" style="font-family: Helvetica;">Evaluate Individual Design</a>
+                        <a href="#interactiveDemo" style="font-family: Helvetica;">Evaluate Individual Design</a>
                     </li>
                 </ul>
             </div>
@@ -199,7 +199,7 @@
 
             <!-- <div id="interactiveDemo" class="row" style="">  -->
             <!-- </div>  -->
-            <div id="guide" style="position:relative; left:40px; top: 128px;height:0px; width:29px; border: 0px solid black">
+            <div id="guide" style="position:relative; left:40px; top: 128px;height:0px; width:29px; border: 0px solid black; display:none">
                 <div style="position: absolute; top: -46px; left:-5px; font-size: 14px; width: 160px"><b>Design Steps</b></div>
                 <div class="guide" style="">1<div class="guide_text" style="">Set inputs</div></div>
                 <div id="guide_2" style="height:48px; width:1px ;background-color: #7379DE; margin-left: 49%"></div>
@@ -215,7 +215,7 @@
             </div>
 
 
-            <div id="SLA" style="width: 100%; height:0px; position: relative; z-index: 10;">
+            <div id="SLA" style="width: 100%; height:0px; position: relative; z-index: 10; display:none">
                 <div style="width: 244px;position: absolute; top:0px; right: 0px;">
                     <div id="SLA-tab" class="SLA-tab" style="position: absolute; right: 5px; width: 315px; height: 50px; border: #7F89FF solid 1.5px; border-bottom-left-radius:15px;border-bottom-right-radius:15px;">
                         <div style="position: absolute;top:5px; right: 22px; width: 250px; transform: rotate(0deg) ; transform-origin: right top 0;">
@@ -228,42 +228,44 @@
                             </div>
                         </div>
                         <div id="SLA-container" style="height: 315px; margin-top: 22px; width: 0px">
-                        <div id="SLA-title"  style="display: block; width:1260px; height: 15%; padding:0px; overflow: hidden; transform: translateX(40px) translateY(0px); opacity: 0;">
-                            <div class="SLA-box" style=""><b>Parameters</b>
-                            </div><div class="SLA-box" style=""><b>Requirements</b>
-                        </div><div class="SLA-box" style="width: 800px; border-right-width: 0.5px;"><b>Description</b>
-                        </div>
+                            <div id="SLA-title"  style="display: block; width:1260px; height: 15%; padding:0px; overflow: hidden; transform: translateX(40px) translateY(0px); opacity: 0;">
+                                <div class="SLA-box" style=""><b>Parameters</b></div>
+                                <div class="SLA-box" style=""><b>Requirements</b></div>
+                                <div class="SLA-box" style="width: 800px; border-right-width: 0.5px;"><b>Description</b>
+                            </div>
                         </div>
                         <div id="SLA-setting"  style="display: inline-block; width:1255px; height: 0%; overflow: hidden; transform: translateX(40px) translateY(0px); opacity: 0; ">
                             <div style="height: 14%; ">
                                 <div class="SLA-box" style=" display: inline-block; text-align: left; padding-top: 8px">
                                     <input class="checkbox" type="checkbox" id="SLA_radio_1" value="1" />
                                     <label style="" for="SLA_radio_1"><span style="position:relative; ">Database migration<br /></span></label>
-                                </div><div class="SLA-box">
-
-                            </div><div class="SLA-box description" style="padding-top: 2px">
-                                This is offered as a cloud service that you can purchase on top of the core storage and computing resources. You can subscribe to this service to migrate your data from one VM type to another as needed once per month.
-                            </div>
+                                </div>
+                                <div class="SLA-box"></div>
+                                <div class="SLA-box description" style="padding-top: 2px">
+                                    This is offered as a cloud service that you can purchase on top of the core storage and computing resources. You can subscribe to this service to migrate your data from one VM type to another as needed once per month.
+                                </div>
                             </div>
                             <div style="height: 20%">
                                 <div class="SLA-box" style=" display: inline-block; text-align: left; padding-top: 4px">
                                     <input class="checkbox" type="checkbox" id="SLA_radio_2" value="2" />
-                                    <label style="" for="SLA_radio_2"><span style="position:relative; ">Operational and tooling support<br /></span></label>
-                                </div><div class="SLA-box">
-
-                            </div><div class="SLA-box description" style="padding-top: 10px">
-                                This constitutes additional software solutions that you can deploy on top of your core data store. This includes building and testing, automated code-deploy, version control, and custom analytics.
-                            </div>
+                                    <label style="" for="SLA_radio_2">
+                                        <span style="position:relative; ">Operational and tooling support<br /></span>
+                                    </label>
+                                </div>
+                                <div class="SLA-box"></div>
+                                <div class="SLA-box description" style="padding-top: 10px">
+                                    This constitutes additional software solutions that you can deploy on top of your core data store. This includes building and testing, automated code-deploy, version control, and custom analytics.
+                                </div>
                             </div>
                             <div style="height: 14%">
                                 <div class="SLA-box" style=" display: inline-block; text-align: left; padding-top: 8px">
                                     <input class="checkbox" type="checkbox" id="SLA_radio_3" value="3" />
                                     <label style="" for="SLA_radio_3"><span style="position:relative; ">Backup and recovery <br /></span></label>
-                                </div><div class="SLA-box">
-
-                            </div><div class="SLA-box description" style="padding-top: 10px">
-                                This service includes a monthly backup of your storage charged on a per-GB basis.
-                            </div>
+                                </div>
+                                <div class="SLA-box"></div>
+                                <div class="SLA-box description" style="padding-top: 10px">
+                                    This service includes a monthly backup of your storage charged on a per-GB basis.
+                                </div>
                             </div>
                             <div style="height: 22%">
                                 <div class="SLA-box" style=" display: inline-block; text-align: left; padding-top: 13px">
@@ -275,32 +277,34 @@
                                 <input class="checkbox checkbox_radio" type="checkbox" id="availability_checkbox_2" />
                                 <label style="" for="availability_checkbox_2"><span style="position:relative; ">&gt;99.9%&nbsp;<br /></span></label>
 
-                            </div><div class="SLA-box description" style="padding-top: 5px">
-                                This refers to the promised percentage of time during which the the VMs of an application are promised to be up and running. The values specified to the left indicate the availability requirements in terms of monthly uptime percentage. For all providers that do not meet your availability requirements, we will exclude them from the optimal configurations.
-                            </div>
+                                </div>
+                                <div class="SLA-box description" style="padding-top: 5px">
+                                    This refers to the promised percentage of time during which the the VMs of an application are promised to be up and running. The values specified to the left indicate the availability requirements in terms of monthly uptime percentage. For all providers that do not meet your availability requirements, we will exclude them from the optimal configurations.
+                                </div>
                             </div>
                             <div style="height: 30%">
                                 <div class="SLA-box" style=" display: inline-block; text-align: left; padding-top:25px">
                                     <input class="checkbox" type="checkbox" id="SLA_radio_5" value="5" />
                                     <label style="" for="SLA_radio_5"><span style="position:relative; ">Durability <br /></span></label>
-                                </div><div class="SLA-box" style=" display: inline-block; text-align: left; padding-top: 6px">
-                                <input class="checkbox checkbox_radio" type="checkbox" id="durability_checkbox_1" />
-                                <label style="" for="durability_checkbox_1"><span style="position:relative; ">&gt;99.99...(11&nbsp;9s)% <br /></span></label>
-                                <input class="checkbox checkbox_radio" type="checkbox" id="durability_checkbox_2" />
-                                <label style="" for="durability_checkbox_2"><span style="position:relative; ">&gt;99.99...(12&nbsp;9s)% <br /></span></label>
-                                <input class="checkbox checkbox_radio" type="checkbox" id="durability_checkbox_3" />
-                                <label style="" for="durability_checkbox_3"><span style="position:relative; ">&gt;99.99...(13&nbsp;9s)% <br /></span></label>
-
-                            </div><div class="SLA-box description" style="padding-top: 23px">
-                                This parameter refers to the durability guarantees measured as the number of 9’s after the decimal of 99. For all providers that do not meet your durability requirements, we will exclude them from the optimal configurations.
-                            </div>
+                                </div>
+                                <div class="SLA-box" style=" display: inline-block; text-align: left; padding-top: 6px">
+                                    <input class="checkbox checkbox_radio" type="checkbox" id="durability_checkbox_1" />
+                                    <label style="" for="durability_checkbox_1"><span style="position:relative; ">&gt;99.99...(11&nbsp;9s)% <br /></span></label>
+                                    <input class="checkbox checkbox_radio" type="checkbox" id="durability_checkbox_2" />
+                                    <label style="" for="durability_checkbox_2"><span style="position:relative; ">&gt;99.99...(12&nbsp;9s)% <br /></span></label>
+                                    <input class="checkbox checkbox_radio" type="checkbox" id="durability_checkbox_3" />
+                                    <label style="" for="durability_checkbox_3"><span style="position:relative; ">&gt;99.99...(13&nbsp;9s)% <br /></span></label>
+                                </div>
+                                <div class="SLA-box description" style="padding-top: 23px">
+                                    This parameter refers to the durability guarantees measured as the number of 9’s after the decimal of 99. For all providers that do not meet your durability requirements, we will exclude them from the optimal configurations.
+                                </div>
                             </div>
                         </div>
-                        </div>
-
                     </div>
+
                 </div>
             </div>
+        </div>
 
             <div class="row" style="text-align: left; margin-bottom: 20px; color: black; position: relative; left: 220px; margin-top: 80px">
                  <span style="font-size:14px;border-bottom: 1px solid #C0CCE8;">
@@ -310,12 +314,12 @@
             <div id="input" class="row" style="text-align: center;  background-color: #F0F7FF; background-color: white; border-radius: 0px; padding-left: 160px" >
                 <div class="col-sm-3" style="width: 23%;position: relative; left: -1.5%">
                     <div class="row">
-                            <div style="display: inline-block">
+                        <div style="display: inline-block">
                             <!--<img class="img-responsive img-centered" style="width:105px" src="./images/data.png"/>-->
                             <span style="font-size:20px" id="data-text" >
                                 data<span style="color: blue;margin-top:15px"><sup>*</sup></span>
                             </span>
-                            </div>
+                        </div>
                         <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:4px; display: inline-block" data-toggle="collapse" href="#dataset-setting" role="button" aria-expanded="false">
                             <div id="dataset-trigger" onclick="adjustGuide()">
                                 <img class="img-responsive img-centered" style="width:25px;" src="./images/arrow.png"/>
@@ -377,25 +381,21 @@
                                 <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                                 <div id="loading_data_percentage" class="loading-indicator-percentage">0%</div>
                             </div>
-                    </div>
                 </div>
+            </div>
 
 
-                <div class="col-sm-3" style="width: 23%;position: relative; left: -2.5%">
+                <div class="col-sm-3" style="width: 20%;position: relative; left: -2.5%">
                     <div class="row">
-                    <div style="display: inline-block">
-                        <!--<img class="img-responsive img-centered" style="width:105px" src="./images/workload.png"/>-->
-                        <span style="cursor: pointer;font-size:20px" id="workload-text" >workload<span style="color: blue;margin-top:15px"><sup>*</sup></span></span>
-                    </div>
+                        <div style="display: inline-block">
+                            <!--<img class="img-responsive img-centered" style="width:105px" src="./images/workload.png"/>-->
+                            <span style="cursor: pointer;font-size:20px" id="workload-text" >workload<span style="color: blue;margin-top:15px"><sup>*</sup></span></span>
+                        </div>
                         <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:4px; display: inline-block" data-toggle="collapse" href="#workload-setting" role="button" aria-expanded="false">
                             <div id="workload-trigger" onclick="adjustGuide()">
                                 <img class="img-responsive img-centered" style="width:25px" src="./images/arrow.png"/>
                             </div>
                         </div>
-
-
-
-
                     </div>
                     <div id="workload-setting" class="collapse multi-collapse">
                         <!-- <div class="row">
@@ -554,115 +554,185 @@
                         </div>
                     </div>
                     -->
-                      </div>
+                </div>
 
+                <!-- cloud tab: hidden now -->
+                <div class="col-sm-3"  style="width: 12%; position: relative; left: 0%; padding: 0px">
+                    <div style="display: inline-block">
+                        <!--<img class="img-responsive img-centered" style="width:105px" src="./images/cloud.png"/>-->
+                        <span style="cursor: pointer; font-size:20px" id="cloud-provider-text" >cloud provider</span><span style="color: blue;margin-top:15px"><sup>*</sup></span>
+                    </div>
+                    <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:4px; display: inline-block" data-toggle="collapse" href="#cloud-provider-setting" role="button" aria-expanded="false">
+                        <div id="cloud-provider-trigger" onclick="adjustGuide()">
+                            <img class="img-responsive img-centered" style="width:25px" src="./images/arrow.png"/>
+                        </div>
+                    </div>
+                    <div id="cloud-provider-setting" class="collapse multi-collapse">
+                        <div class="row">
+                            <div>
+                                <div class="">
+                                    <form id="hardware_form" style=" text-align: left; height:40px; padding:5px; border:0px solid #D3EBFF;border-radius:4px; margin:7px 6px 0px 6px" >
+                                        <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AWS" checked="checked"/>AWS
+                                            <span class="check_mark"></span>
+                                        </label>
+                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="GCP"/>GCP
+                                            <span class="check_mark"></span>
+                                        </label>
+                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AZURE"/>Azure
+                                            <span class="check_mark"></span>
+                                        </label>
+                                    </form>                                     
+                                </div>
+                            </div>
 
-                <div class="col-sm-3" style="width: 18%; position: relative; left: -4%" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3" style="width: 18%; position: relative; left: 0%" >
                           <div class="row">
                               <div style="display: inline-block">
                         <!--<img class="img-responsive img-centered" style="width:105px" src="./images/dollar.png"/>-->
-                                  <span style="cursor: pointer; font-size:20px" id="cost-text" >budget<span style="color: blue;margin-top:15px"><sup>*</sup></span></span>
+                                  <span style="cursor: pointer; font-size:20px" id="cost-text" >virtual machine<span style="color: blue;margin-top:15px"><sup>*</sup></span></span>
                               </div>
-                              <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:4px; display: inline-block" data-toggle="collapse" href="#cost-setting" role="button" aria-expanded="false">
+                              <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:4px; display: inline-block" data-toggle="collapse" href="#hardware-setting" role="button" aria-expanded="false">
                                   <div id="cost-trigger" onclick="adjustGuide()">
                                       <img class="img-responsive img-centered" style="width:25px" src="./images/arrow.png"/>
                                   </div>
                               </div>
                           </div>
-                          <div id="cost-setting" class="collapse multi-collapse">
-                             <form  style=" text-align: left; height:40px; padding:5px; border:0px solid #D3EBFF;border-radius:4px; margin:7px 6px 0px 6px" >
-                                  <label class="radiobutton"  style=""><input id="cost_conscious_checkbox" type="radio" name="radio_3" value="cost-conscious" checked="checked"/>cost-conscious
-                                      <span class="check_mark"></span>
-                                  </label>
-                              </form>
-                              <div class="row">
-                                      <div class="input-group" style="text-align: center;">
-                                          <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">The total amount of money you are willing to spend on the cloud to run this workload.</span>Budget </span>
-                                          <input id="cost" type="number" class="form-control" aria-label="Cost" placeholder="Cost" style="text-align:right " autocomplete="false"/>
-                                      </div>
-                              </div>
+                          <div id="hardware-setting" class="collapse multi-collapse">
+                            <div id="hardware-message" style="opacity: 1"><br><b>No Cloud Provider Selected</b></div>
+                            <form id="aws_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 0" >
+                                <br><b>Select AWS VM</b>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="0"/>r5d.large
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="1"/>r5d.xlarge
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="2"/>r5d.2xlarge
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="3"/>r5d.4xlarge
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="4"/>r5d.12xlarge
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="5"/>r5d.24xlarge
+                                    <span class="check_mark"></span>
+                                </label>
+                            </form>
+
+                            <form id="gcp_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 0" >
+                                <br><b>Select GCP VM</b>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="0"/>n1-highmem-2
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="1"/>n1-highmem-4
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="2"/>n1-highmem-8
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="3"/>n1-highmem-16
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="4"/>n1-highmem-32
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="5"/>n1-highmem-64
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="6"/>n1-highmem-96
+                                    <span class="check_mark"></span>
+                                </label>
+                            </form>
+
+                            <form id="azure_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 0" >
+                                <br><b>Select Azure VM</b>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="0"/>E2 v3
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="1"/>E4 v3
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="2"/>E8 v3
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="3"/>E16 v3
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="4"/>E20 v3
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="5"/>E32 v3
+                                    <span class="check_mark"></span>
+                                </label>
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="6"/>E64 v3
+                                    <span class="check_mark"></span>
+                                </label>
+                            </form>
+
+                            <!-- cannot remove without changing references in JS -->
+                            <div class="row" style="margin:70px 0px 0px 0px; display:none">
+                                <div class="input-group" style="text-align: center;">
+                                    <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">The total amount of money you are willing to spend on the cloud to run this workload.</span>Budget </span>
+                                    <input id="cost" type="number" class="form-control" aria-label="Cost" placeholder="Cost" style="text-align:right " autocomplete="false"/>
+                                </div>
+                            </div>
 
                           </div>
 
                       </div>
 
-                <div class="col-sm-3" style="width: 16%; position: relative; left: -4%" >
+                <div class="col-sm-3" style="width: 20%; position: relative; left: 0%" >
                     <div class="row">
                         <div style="display: inline-block">
                             <!--<img class="img-responsive img-centered" style="width:105px" src="./images/dollar.png"/>-->
-                            <span style="cursor: pointer; font-size:20px" id="performance-text" >performance</span>
+                            <span style="cursor: pointer; font-size:20px" id="performance-text" >design</span>
                         </div>
-                        <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:4px; display: inline-block" data-toggle="collapse" href="#performance-setting" role="button" aria-expanded="false">
-                            <div id="performance-trigger" onclick="adjustGuide()">
+                        <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:4px; display: inline-block" data-toggle="collapse" href="#design-setting" role="button" aria-expanded="false">
+                            <div id="design-trigger" onclick="adjustGuide()">
                                 <img class="img-responsive img-centered" style="width:25px" src="./images/arrow.png"/>
                             </div>
                         </div>
                     </div>
-                    <div id="performance-setting" class="collapse multi-collapse">
-
-                        <form  style=" text-align: left; height:40px; width:200px;position: relative; left:-20px;padding:5px; border:0px solid #D3EBFF;border-radius:4px; margin:7px 6px 0px 6px">
-                            <label class="radiobutton" style=""><input id="performance_conscious_checkbox" type="radio" name="radio_3" value="performance-conscious" />performance-conscious
-                                <span class="check_mark"></span>
-                            </label>
-                        </form>
+                    <div id="design-setting" class="collapse multi-collapse">
                         <div class="row">
-                            <div class="input-group" style="text-align: center;">
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">The target performance in terms of latency that you want to achieve for this workload.</span>Latency (hours) </span>
-                                <input id="latency" class="form-control" aria-label="Latency" placeholder="Latency" style="text-align:right " autocomplete="false"/>
+
+                            <div class="input-group">
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Maximum number of entries in a block</span>Size ratio</span>
+                                <input id="T" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Size Ratio (B)" placeholder="Size Ratio (B)" style="text-align:right" autocomplete="false"/>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">At what capacity hot levels are compacted</span>Runs per hot level</span>
+                                <input id="K" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Runs per hot level (K)" placeholder="Runs per hot level (K)" style="text-align:right" autocomplete="false"/>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">At what capacity cold levels are compacted</span>Runs per cold level</span>
+                                <input id="Z" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Runs per cold level (Z)" placeholder="Runs per cold level (Z)" style="text-align:right" autocomplete="false"/>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Amount of memory allocated to in-memory buffer/memtables</span>Buffer capacity</span>
+                                <input id="M_B" type="number" min="0" class="form-control" aria-label="Buffer capacity (M_B)" placeholder="Buffer capacity (M_B)" style="text-align:right" autocomplete="false"/>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Bits/entry assigned to Bloom filters</span>Bloom filter memory</span>
+                                <input id="M_BF" type="number" min="0" class="form-control" aria-label="Bloom filter memory (M_BF)" placeholder="Bloom filter memory (M_BF)" style="text-align:right" autocomplete="false"/>
+                            </div>
+                            <div class="input-group" >
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Amount of memory allocated to indexes (fence pointers/hash tables)</span>Indexes</span>
+                                <input id="M_FP" type="number" min="0" class="form-control" aria-label="Indexes (M_FP)" placeholder="Indexes (M_FP)" style="text-align:right" autocomplete="false"/>
                             </div>
                         </div>
+
+
                     </div>
 
                 </div>
-
-
-
-                      <div class="col-sm-3"  style="width: 12%; position: relative; left: 0%; padding: 0px">
-                              <div style="display: inline-block">
-                                  <!--<img class="img-responsive img-centered" style="width:105px" src="./images/cloud.png"/>-->
-                                  <span style="cursor: pointer; font-size:20px" id="cloud-provider-text" >cloud</span>
-                              </div>
-                          <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:4px; display: inline-block" data-toggle="collapse" href="#cloud-provider-setting" role="button" aria-expanded="false">
-                              <div id="cloud-provider-trigger" onclick="adjustGuide()">
-                                  <img class="img-responsive img-centered" style="width:25px" src="./images/arrow.png"/>
-                              </div>
-                          </div>
-                          <div id="cloud-provider-setting" class="collapse multi-collapse">
-                              <div class="row">
-                                  <div>
-                                      <div class="">
-                                          <select id="cloud-provider" name="" style="position: relative; left: -120px;width:150px;height: 30px ; margin:0px 80px;text-align: center; display: none;" class="myselect myinput"">
-                                              <option value="Any">Any</option>
-                                              <option value="AWS">AWS</option>
-                                              <option value="GCP">GCP</option>
-                                              <option value="Azure">Azure</option>
-                                          </select>
-                                          <div style="position:relative; left: calc(50% - 48px); transform: scale(1.4); transform-origin:left top 0; ">
-                                              <div style="margin-top: 20px;  margin-bottom: 7px; padding-top: 3px;  width: 96px">
-                                                  <input class="checkbox" type="checkbox" id="AWS_checkbox" value="0" />
-                                                  <label style="font-size: 15px; padding-left: 19px" for="AWS_checkbox"><div style="position:relative; height:19px; font-size:10px; border: #dce4ec solid 0.5px; background-color: #ecf0f1;border-bottom-right-radius: 6px; border-top-right-radius: 6px; padding-left: 30px;  padding-right: 5px; top: 0px;"><div style="transform: scale(0.92) translateY(1px)">AWS</div></div></label>
-                                              </div>
-                                              <div style=" margin-bottom: 7px; padding-top: 3px;  width: 96px">
-                                              <input class="checkbox" type="checkbox" id="GCP_checkbox" value="1" />
-                                                  <label style="font-size: 15px; padding-left: 19px" for="GCP_checkbox"><div style="position:relative; height:19px; font-size:10px; border: #dce4ec solid 0.5px; background-color: #ecf0f1;border-bottom-right-radius: 6px; border-top-right-radius: 6px; padding-left: 32px;  padding-right: 5px; top: 0px;"><div style="transform: scale(0.92) translateY(1px)">GCP</div></div></label>
-                                              </div>
-                                              <div style=" padding-top: 3px;  width: 96px">
-                                              <input class="checkbox" type="checkbox" id="Azure_checkbox" value="2" />
-                                                  <label style="font-size: 15px; padding-left: 19px" for="Azure_checkbox"><div style="position:relative; height:19px; font-size:10px; border: #dce4ec solid 0.5px; background-color: #ecf0f1;border-bottom-right-radius: 6px; border-top-right-radius: 6px; padding-left: 23px;  padding-right: 5px; top: 0px;"><div style="transform: scale(0.92) translateY(1px)">Azure</div></div></label>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-
-                              </div>
-                          </div>
-                      </div>
-
-
-
-
-
-            </div>
+        </div>
 <!--
             <div style="width: 100%; height:0px; position: relative; ">
                 <div style="width: 244px;position: absolute; right: -20px;">
