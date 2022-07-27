@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +21,7 @@
 
     <!-- Custom JS -->
     <script src="js/autoRerun.js"></script>
+    <script src="js/verifyDesign.js"></script>
     <script src="js/uploadDataFile.js"></script>
     <script src="js/uploadWorkloadFile.js"></script>
 
@@ -43,7 +43,6 @@
 </head>
 
 <body id="page-top" class="index" >
-
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -301,7 +300,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -352,37 +350,37 @@
                                 <span name="skew_check_mark" class="check_mark"></span>
                             </label>
                         </form>
-                            <div class="input-group" >
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Total data items to store</span># Entries</span>
-                                <input id="N" type="text" class="form-control" aria-label="Index Size N (elements)" placeholder="Number of Entries in the Index (e.g., 10485760)" style="text-align:right" autocomplete="false"/>
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Key-Value pair size in bytes (e.g., 16).</span>Entry size (bytes) </span>
-                                <input id="E" type="number" class="form-control" aria-label="Key-Value pair size (bytes)" placeholder="Key-Value pair size in bytes (e.g., 16)" style="text-align:right" autocomplete="false"/>
-                            </div>
-                            <div class="input-group">
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Key size in bytes (e.g., 8).</span>Key size (bytes) </span>
-                                <input id="F" type="text" class="form-control" aria-label="Key size (bytes)" placeholder="Key size in bytes (e.g., 8)" style="text-align:right" autocomplete="false"/>
-                            </div>
-                            <!-- Message -->
-                            <div class="guide_text_inputs" >
-                                You can manually enter data specifications or alternatively upload a data file. A sample file is <a href="data/dataSampleFile.txt" style="color: blue;" download>here</a>.
-                            </div>
-                            <!-- Upload data file -->
-                            <div class="input-group">
-                                <input type="file" id="data-input" class="visually-hidden" onchange="uploadDataFile(event)">
-                                <label for="data-input" class ="cloud_button_small">Upload data file</label>
-                                <label id="data-input-file-name"></label>
-                                <br>
-                                <label id="data-input-file-invalid" style="color: red;"></label>
-                            </div>
-                            <!-- Loading indicator -->
-                            <div id="loading_indicator_1" class="loading-indicator">
-                                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-                                <div id="loading_data_percentage" class="loading-indicator-percentage">0%</div>
-                            </div>
+                        <div class="input-group" >
+                            <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Total data items to store</span># Entries</span>
+                            <input id="N" type="text" class="form-control" aria-label="Index Size N (elements)" placeholder="Number of Entries in the Index (e.g., 10485760)" style="text-align:right" autocomplete="false"/>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Key-Value pair size in bytes (e.g., 16).</span>Entry size (bytes) </span>
+                            <input id="E" type="number" class="form-control" aria-label="Key-Value pair size (bytes)" placeholder="Key-Value pair size in bytes (e.g., 16)" style="text-align:right" autocomplete="false"/>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Key size in bytes (e.g., 8).</span>Key size (bytes) </span>
+                            <input id="F" type="text" class="form-control" aria-label="Key size (bytes)" placeholder="Key size in bytes (e.g., 8)" style="text-align:right" autocomplete="false"/>
+                        </div>
+                        <!-- Message -->
+                        <div class="guide_text_inputs" >
+                            You can manually enter data specifications or alternatively upload a data file. A sample file is <a href="data/dataSampleFile.txt" style="color: blue;" download>here</a>.
+                        </div>
+                        <!-- Upload data file -->
+                        <div class="input-group">
+                            <input type="file" id="data-input" class="visually-hidden" onchange="uploadDataFile(event)">
+                            <label for="data-input" class ="cloud_button_small">Upload data file</label>
+                            <label id="data-input-file-name"></label>
+                            <br>
+                            <label id="data-input-file-invalid" style="color: red;"></label>
+                        </div>
+                        <!-- Loading indicator -->
+                        <div id="loading_indicator_1" class="loading-indicator">
+                            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                            <div id="loading_data_percentage" class="loading-indicator-percentage">0%</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
 
                 <div class="col-sm-3" style="width: 20%;position: relative; left: -2.5%">
@@ -442,26 +440,24 @@
                             <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Proportion of Lookup Operations</span>Lookups %</span>
                             <input id="lookup_percentage" type="text" readonly class="form-control" aria-label="Proportion of lookup operation" placeholder="(e.g., 1)"  style="text-align:right" />
                             <span class="input-group-btn">
-                            <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:1px; left:5px; display: inline-block" data-toggle="collapse" href="#lookups" role="button" aria-expanded="false">
-                                <div id="workload-trigger2" onclick="adjustGuide()">
-                                    <img class="img-responsive img-centered" style="width:18px" src="./images/arrow.png"/>
+                                <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:1px; left:5px; display: inline-block" data-toggle="collapse" href="#lookups" role="button" aria-expanded="false">
+                                    <div id="workload-trigger2" onclick="adjustGuide()">
+                                        <img class="img-responsive img-centered" style="width:18px" src="./images/arrow.png"/>
+                                    </div>
                                 </div>
-                            </div>
                             </span>
-
                         </div>
                         <div id="lookups" class="collapse multi-collapse">
+                            <div class="input-group">
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Proportion of Existing Point Lookup Operation</span>Point Lookups %</span>
+                                <input id="v" type="text" class="form-control" aria-label="Proportion of existing point lookup operation" placeholder=" v (e.g., 1)"  style="text-align:right" onchange="updateReadOnlyFields()"/>
 
-                        <div class="input-group">
-                            <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Proportion of Existing Point Lookup Operation</span>Point Lookups %</span>
-                            <input id="v" type="text" class="form-control" aria-label="Proportion of existing point lookup operation" placeholder=" v (e.g., 1)"  style="text-align:right" onchange="updateReadOnlyFields()"/>
+                            </div>
 
-                        </div>
-
-                        <div class="input-group" >
-                            <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Proportion of Non-result Point Lookup Operation</span>Zero result Point Lookups %</span>
-                            <input id="r" type="text" class="form-control" aria-label="Proportion of non-result point lookup operation" placeholder=" r (e.g., 1)"  style="text-align:right" onchange="updateReadOnlyFields()"/>
-                        </div>
+                            <div class="input-group" >
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Proportion of Non-result Point Lookup Operation</span>Zero result Point Lookups %</span>
+                                <input id="r" type="text" class="form-control" aria-label="Proportion of non-result point lookup operation" placeholder=" r (e.g., 1)"  style="text-align:right" onchange="updateReadOnlyFields()"/>
+                            </div>
                         </div>
 
                         <div class="input-group">
@@ -572,13 +568,13 @@
                             <div>
                                 <div class="">
                                     <form id="hardware_form" style=" text-align: left; height:40px; padding:5px; border:0px solid #D3EBFF;border-radius:4px; margin:7px 6px 0px 6px" >
-                                        <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AWS" checked="checked"/>AWS
+                                        <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AWS" checked="checked" onclick="setCloudProvider(0)"/>AWS
                                             <span class="check_mark"></span>
                                         </label>
-                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="GCP"/>GCP
+                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="GCP" onclick="setCloudProvider(1)"/>GCP
                                             <span class="check_mark"></span>
                                         </label>
-                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AZURE"/>Azure
+                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AZURE" onclick="setCloudProvider(2)"/>Azure
                                             <span class="check_mark"></span>
                                         </label>
                                     </form>                                     
@@ -605,74 +601,86 @@
                             <div id="hardware-message" style="opacity: 1"><br><b>No Cloud Provider Selected</b></div>
                             <form id="aws_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 0" >
                                 <br><b>Select AWS VM</b>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="0"/>r5d.large
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws0"/>r5d.large
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="1"/>r5d.xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws1"/>r5d.xlarge
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="2"/>r5d.2xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws2"/>r5d.2xlarge
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="3"/>r5d.4xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws3"/>r5d.4xlarge
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="4"/>r5d.12xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws4"/>r5d.12xlarge
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="aws_vm_radio" value="5"/>r5d.24xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws5"/>r5d.24xlarge
                                     <span class="check_mark"></span>
                                 </label>
+                                <div class="input-group">
+                                    <span class="input-group-addon tooltip1">Number of VMs</span>
+                                    <input id="numAWSVMs" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Number of VMs" style="text-align:right" autocomplete="false" onchange="setNumVMs(numVMs.value)"/>
+                                </div>
                             </form>
 
                             <form id="gcp_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 0" >
                                 <br><b>Select GCP VM</b>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="0"/>n1-highmem-2
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp0"/>n1-highmem-2
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="1"/>n1-highmem-4
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp1"/>n1-highmem-4
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="2"/>n1-highmem-8
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp2"/>n1-highmem-8
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="3"/>n1-highmem-16
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp3"/>n1-highmem-16
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="4"/>n1-highmem-32
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp4"/>n1-highmem-32
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="5"/>n1-highmem-64
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp5"/>n1-highmem-64
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="gcp_vm_radio" value="6"/>n1-highmem-96
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp6"/>n1-highmem-96
                                     <span class="check_mark"></span>
                                 </label>
+                                <div class="input-group">
+                                    <span class="input-group-addon tooltip1">Number of VMs</span>
+                                    <input id="numGCPVMs" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Number of VMs" style="text-align:right" autocomplete="false" onchange="setNumVMs(numVMs.value)"/>
+                                </div>
                             </form>
 
                             <form id="azure_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 0" >
                                 <br><b>Select Azure VM</b>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="0"/>E2 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure0"/>E2 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="1"/>E4 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure1"/>E4 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="2"/>E8 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure2"/>E8 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="3"/>E16 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure3"/>E16 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="4"/>E20 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure4"/>E20 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="5"/>E32 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure5"/>E32 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="azure_vm_radio" value="6"/>E64 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure6"/>E64 v3
                                     <span class="check_mark"></span>
                                 </label>
+                                <div class="input-group">
+                                    <span class="input-group-addon tooltip1">Number of VMs</span>
+                                    <input id="numAzureVMs" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Number of VMs" style="text-align:right" autocomplete="false" onchange="setNumVMs(numVMs.value)"/>
+                                </div>
                             </form>
 
                             <!-- cannot remove without changing references in JS -->
@@ -691,7 +699,7 @@
                     <div class="row">
                         <div style="display: inline-block">
                             <!--<img class="img-responsive img-centered" style="width:105px" src="./images/dollar.png"/>-->
-                            <span style="cursor: pointer; font-size:20px" id="performance-text" >design</span>
+                            <span style="cursor: pointer; font-size:20px" id="performance-text" >design</span><span style="color: blue;margin-top:15px"><sup>*</sup></span>
                         </div>
                         <div class="trigger rotate" style="cursor: pointer; width:25px; position:relative; top:4px; display: inline-block" data-toggle="collapse" href="#design-setting" role="button" aria-expanded="false">
                             <div id="design-trigger" onclick="adjustGuide()">
@@ -703,34 +711,31 @@
                         <div class="row">
 
                             <div class="input-group">
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Maximum number of entries in a block</span>Size ratio</span>
-                                <input id="T" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Size Ratio (B)" placeholder="Size Ratio (B)" style="text-align:right" autocomplete="false"/>
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Capacity ratio between adjacent levels</span>Growth Factor</span>
+                                <input id="T" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Growth Factor (T)" placeholder="T" style="text-align:right" autocomplete="false"/>
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">At what capacity hot levels are compacted</span>Runs per hot level</span>
-                                <input id="K" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Runs per hot level (K)" placeholder="Runs per hot level (K)" style="text-align:right" autocomplete="false"/>
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Maximum # runs per hot level</span>Hot Merge Threshold</span>
+                                <input id="K" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Hot Merge Threshold (K)" placeholder="K" style="text-align:right" autocomplete="false"/>
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">At what capacity cold levels are compacted</span>Runs per cold level</span>
-                                <input id="Z" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Runs per cold level (Z)" placeholder="Runs per cold level (Z)" style="text-align:right" autocomplete="false"/>
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Maximum # runs per cold level</span>Cold Merge Threshold</span>
+                                <input id="Z" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Cold Merge Threshold (Z)" placeholder="Z" style="text-align:right" autocomplete="false"/>
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Amount of memory allocated to in-memory buffer/memtables</span>Buffer capacity</span>
-                                <input id="M_B" type="number" min="0" class="form-control" aria-label="Buffer capacity (M_B)" placeholder="Buffer capacity (M_B)" style="text-align:right" autocomplete="false"/>
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Amount of memory allocated to in-memory buffer/memtables</span>Memory for Buffer (GB)</span>
+                                <input id="M_B" type="number" min="0" class="form-control" aria-label="Memory for Buffer (M_B)" placeholder="M_B" style="text-align:right" autocomplete="false"/>
                             </div>
                             <div class="input-group">
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Bits/entry assigned to Bloom filters</span>Bloom filter memory</span>
-                                <input id="M_BF" type="number" min="0" class="form-control" aria-label="Bloom filter memory (M_BF)" placeholder="Bloom filter memory (M_BF)" style="text-align:right" autocomplete="false"/>
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Bits/entry assigned to Bloom filters</span>Memory for Bloom Filters (GB)</span>
+                                <input id="M_BF" type="number" min="0" class="form-control" aria-label="Memory for Bloom Filters (M_BF)" placeholder="M_BF" style="text-align:right" autocomplete="false"/>
                             </div>
                             <div class="input-group" >
-                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Amount of memory allocated to indexes (fence pointers/hash tables)</span>Indexes</span>
-                                <input id="M_FP" type="number" min="0" class="form-control" aria-label="Indexes (M_FP)" placeholder="Indexes (M_FP)" style="text-align:right" autocomplete="false"/>
+                                <span class="input-group-addon tooltip1"><span class="tooltip1 tooltiptext_input">Amount of memory allocated to indexes (fence pointers/hash tables)</span>Memory for Indexes (GB)</span>
+                                <input id="M_FP" type="number" min="0" class="form-control" aria-label="Memory for Indexes (M_FP)" placeholder="M_FP" style="text-align:right" autocomplete="false"/>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
         </div>
 <!--
@@ -899,8 +904,11 @@
                 </div>
 
                 <div class="row" style="width: 100%; margin-bottom: 50px; margin-top: 65px">
-
-                    <div  class="cloud_button" onclick="LoadCharts()" style=" left:calc(50% - 118px); cursor:pointer" >
+                    <div class="cloud_button" onclick="ValidateStorage()" style="left:calc(50% - 118px); cursor:pointer" >
+                        Validate Design
+                    </div>
+                    <br>
+                    <div class="cloud_button" onclick="LoadCharts()" style="left:calc(50% - 118px); cursor:pointer" >
                         Design Storage Engine
                     </div>
 
