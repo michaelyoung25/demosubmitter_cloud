@@ -207,7 +207,7 @@ function ValidateStorage()
         alert('Minimum value for K and Z is 1.')
     }
 
-    if (K > T-1 || Z < T-1)
+    if (K > T-1 || Z > T-1)
     {
         maxKZ = T-1;
         alert('Maximum value for K and Z is T-1, which is '+ maxKZ)
