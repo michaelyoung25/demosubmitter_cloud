@@ -568,13 +568,13 @@
                             <div>
                                 <div class="">
                                     <form id="hardware_form" style=" text-align: left; height:40px; padding:5px; border:0px solid #D3EBFF;border-radius:4px; margin:7px 6px 0px 6px" >
-                                        <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AWS" checked="checked" onclick="setCloudProvider(0)"/>AWS
+                                        <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AWS" checked="checked" onclick="setCloudProvider(0)" autocomplete="off"/>AWS
                                             <span class="check_mark"></span>
                                         </label>
-                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="GCP" onclick="setCloudProvider(1)"/>GCP
+                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="GCP" onclick="setCloudProvider(1)" autocomplete="off"/>GCP
                                             <span class="check_mark"></span>
                                         </label>
-                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AZURE" onclick="setCloudProvider(2)"/>Azure
+                                        <label class="radiobutton"  style="margin:0px 0px 10px 10px; display: block"><input id="cloud_provider_checkbox" type="radio" name="hardware_radio" value="AZURE" onclick="setCloudProvider(2)" autocomplete="off"/>Azure
                                             <span class="check_mark"></span>
                                         </label>
                                     </form>                                     
@@ -598,88 +598,88 @@
                               </div>
                           </div>
                           <div id="hardware-setting" class="collapse multi-collapse">
-                            <div id="hardware-message" style="opacity: 1"><br><b>No Cloud Provider Selected</b></div>
-                            <form id="aws_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 0" >
+                            <!-- <div id="hardware-message" style="opacity: 1"><br><b>No Cloud Provider Selected</b></div> -->
+                            <form id="aws_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 1" >
                                 <br><b>Select AWS VM</b>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws0"/>r5d.large
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws0" checked="checked" autocomplete="off"/>r5d.large
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws1"/>r5d.xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws1" autocomplete="off"/>r5d.xlarge
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws2"/>r5d.2xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws2" autocomplete="off"/>r5d.2xlarge
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws3"/>r5d.4xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws3" autocomplete="off"/>r5d.4xlarge
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws4"/>r5d.12xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws4" autocomplete="off"/>r5d.12xlarge
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws5"/>r5d.24xlarge
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="aws_vm_radio" type="radio" name="aws_vm_radio" value="aws5" autocomplete="off"/>r5d.24xlarge
                                     <span class="check_mark"></span>
                                 </label>
                                 <div class="input-group">
                                     <span class="input-group-addon tooltip1">Number of VMs</span>
-                                    <input id="numAWSVMs" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Number of VMs" style="text-align:right" autocomplete="false" onchange="setNumVMs(numVMs.value)"/>
+                                    <input id="numAWSVMs" type="number" min="1" value="1" oninput="validity.valid||(value='');" class="form-control" aria-label="Number of VMs" style="text-align:right" autocomplete="off" onchange="setNumVMs(numVMs.value)"/>
                                 </div>
                             </form>
 
                             <form id="gcp_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 0" >
                                 <br><b>Select GCP VM</b>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp0"/>n1-highmem-2
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp0" autocomplete="off"/>n1-highmem-2
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp1"/>n1-highmem-4
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp1" autocomplete="off"/>n1-highmem-4
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp2"/>n1-highmem-8
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp2" autocomplete="off"/>n1-highmem-8
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp3"/>n1-highmem-16
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp3" autocomplete="off"/>n1-highmem-16
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp4"/>n1-highmem-32
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp4" autocomplete="off"/>n1-highmem-32
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp5"/>n1-highmem-64
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp5" autocomplete="off"/>n1-highmem-64
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp6"/>n1-highmem-96
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="gcp_vm_radio" type="radio" name="gcp_vm_radio" value="gcp6" autocomplete="off"/>n1-highmem-96
                                     <span class="check_mark"></span>
                                 </label>
                                 <div class="input-group">
                                     <span class="input-group-addon tooltip1">Number of VMs</span>
-                                    <input id="numGCPVMs" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Number of VMs" style="text-align:right" autocomplete="false" onchange="setNumVMs(numVMs.value)"/>
+                                    <input id="numGCPVMs" type="number" min="1" value="1" oninput="validity.valid||(value='');" class="form-control" aria-label="Number of VMs" style="text-align:right" autocomplete="off" onchange="setNumVMs(numVMs.value)"/>
                                 </div>
                             </form>
 
                             <form id="azure_vm" style="text-align: left; height: 0px; padding: 0px; background-color: #FFFFFF; border:0px solid; margin: 0px; opacity: 0" >
                                 <br><b>Select Azure VM</b>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure0"/>E2 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure0" autocomplete="off"/>E2 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure1"/>E4 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure1" autocomplete="off"/>E4 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure2"/>E8 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure2" autocomplete="off"/>E8 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure3"/>E16 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure3" autocomplete="off"/>E16 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure4"/>E20 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure4" autocomplete="off"/>E20 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure5"/>E32 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure5" autocomplete="off"/>E32 v3
                                     <span class="check_mark"></span>
                                 </label>
-                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure6"/>E64 v3
+                                <label class="radiobutton"  style="margin:10px 0px 10px 10px; display: block"><input id="azure_vm_radio" type="radio" name="azure_vm_radio" value="azure6" autocomplete="off"/>E64 v3
                                     <span class="check_mark"></span>
                                 </label>
                                 <div class="input-group">
                                     <span class="input-group-addon tooltip1">Number of VMs</span>
-                                    <input id="numAzureVMs" type="number" min="0" oninput="validity.valid||(value='');" class="form-control" aria-label="Number of VMs" style="text-align:right" autocomplete="false" onchange="setNumVMs(numVMs.value)"/>
+                                    <input id="numAzureVMs" type="number" min="1" value="1" oninput="validity.valid||(value='');" class="form-control" aria-label="Number of VMs" style="text-align:right" autocomplete="off" onchange="setNumVMs(numVMs.value)"/>
                                 </div>
                             </form>
 
@@ -909,7 +909,7 @@
                     </div>
                     <br>
                     <div class="cloud_button" onclick="LoadCharts()" style="left:calc(50% - 118px); cursor:pointer" >
-                        Design Storage Engine
+                        Evaluate Storage Engine
                     </div>
 
                     <div id="loading_canvas_2" style=" width: 40px; height: 40px; position: relative; top: 10px; left:calc(50%); transform:scale(0.9); opacity: 0">

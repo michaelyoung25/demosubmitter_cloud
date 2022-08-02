@@ -1,23 +1,28 @@
-var cloud_provider;
-var VM;
-var numVMs;
+var cloud_provider = 'AWS';
+var VM = 'aws0';
+var numVMs = 1;
 var totalMemory;
+var E = parseInt(document.getElementById('E').value);
+var B = 0;
 
 function setCloudProvider(n)
 {
     if (n == 0)
     {
-        cloud_provider = 'AWS'
+        cloud_provider = 'AWS';
+        B = 256*1024/(E);
     }
 
     else if (n == 1)
     {
-        cloud_provider = 'GCP'
+        cloud_provider = 'GCP';
+        B = 16*1024/(E);
     }
 
     else
     {
-        cloud_provider = 'Azure'
+        cloud_provider = 'Azure';
+        B = 8*1024/(E);
     }
 }
 
@@ -174,47 +179,52 @@ function setTotalMemory()
  */
 function ValidateStorage()
 {
-    var T = document.getElementById('T').value;
-    var K = document.getElementById('K').value;
-    var Z = document.getElementById('Z').value;
-    var M_B = document.getElementById('M_B').value;
-    var M_BF = document.getElementById('M_BF').value;
-    var M_FP = document.getElementById('M_FP').value;
+    var T = parseInt(document.getElementById('T').value);
+    var K = parseInt(document.getElementById('K').value);
+    var Z = parseInt(document.getElementById('Z').value);
+    var M_B = parseInt(document.getElementById('M_B').value);
+    var M_BF = parseInt(document.getElementById('M_BF').value);
+    var M_FP = parseInt(document.getElementById('M_FP').value);
+    var requiredMemory = M_B + M_BF + M_FP;
 
     setVM();
     setTotalMemory();
 
     if (cloud_provider == null)
     {
-        alert('Cloud provider not selected.');
+        alert('A cloud provider was not selected.');
         return
     }
 
     if (VM == null)
     {
-        alert('VM not selected.');
+        alert('A VM was not selected.');
         return
     }
 
     if (numVMs < 1)
     {
-        alert('Minimum number of VMs is 0.');
+        alert('The inputted value for the number of VM instances is incorrect. Minimum value is 1 instance.');
         return
     }
 
-    if (K < 1 || Z < 1)
+    if (T < 2 || T > B)
     {
-        alert('Minimum value for K and Z is 1.')
+        alert('The inputted value for the growth factor is incorrect. Expected value ranges from 2 to block size.')
     }
 
-    if (K > T-1 || Z > T-1)
+    if (K < 1 || K > T-1)
     {
-        maxKZ = T-1;
-        alert('Maximum value for K and Z is T-1, which is '+ maxKZ)
+        alert('The inputted value for the hot merge threshold is incorrect. Expected value ranges from 1 to growth factor.')
     }
 
-    if (M_B + M_BF + M_FP > totalMemory)
+    if (Z < 1 || Z > T - 1)
     {
-        alert('Total memory exceeds available memory, which is '+ totalMemory)
+        alert('The inputted value for the cold merge threshold is incorrect. Expected value ranges from 1 to growth factor.')
+    }
+
+    if (requiredMemory > totalMemory)
+    {
+        alert('The total memory of ' + requiredMemory + ' GB exceeds available memory of ' + totalMemory + ' GB.')
     }
 }
